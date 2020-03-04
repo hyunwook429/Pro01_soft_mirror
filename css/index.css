@@ -1,0 +1,196 @@
+@charset "UTF-8";
+/* 초기화 */
+body, html{height: 100%; width: 100%;}
+body, h1, h2, h3, h4, h5 ,h6, ul, dl, dd{margin: 0; padding:0;}
+*{box-sizing: border-box;}
+li{list-style: none;}
+a{text-decoration:none;color: inherit;}
+.hidden{position: absolute; left: -9999px;}
+h3{position: relative; font-size: 40px; line-height: 60px; letter-spacing: 0.1em; text-align: center; text-transform: uppercase;}
+h3::after{content:''; display: block; position: absolute; top: 0; left: 0; width: 55px; height: 4px; margin-top: -22px; background: #51ccff;}
+.content-desc{font-family: "";}
+.content-obj{position: relative;margin: 0 auto; height: 100%; overflow: hidden;}
+.short-line{position: relative;}
+.valign{display: table; height: 100%;}
+.valign > *{display: table-cell; width: 100%; height: 100%; vertical-align: middle;}
+.clearfix::after{content:''; display: block; clear: both;}
+.upper{text-transform: uppercase;}
+
+/* <header> */
+#header{overflow: hidden ;position: absolute; width: 100%;height: 72px; z-index: 100;  transition: 0.5s; }
+#header.header { height: 400px; background: rgba(0, 0, 0, 0.5); transition: 0.5s; }
+
+/* logo */
+#header .logo{position: absolute;top: 0; left: 0; width: 100%;height: 72px; }
+#header .logo h1{display: table; height: 100%; position: relative; margin: auto; z-index: 10;}
+#header .logo h1 > *{ display: table-cell; width: 100%; height: 100%; vertical-align: middle;}
+#header .logo h1 a{}
+#header .logo h1 a img{width: 128px; height: auto;}
+/* nav */
+#header .nav_wrap{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+#header nav{width: 100%; max-width: 1440px; height: 72px; margin: auto; border-bottom: 2px solid #ccc;}
+/* nav .left */
+#header nav .left{float: left; height: 72px; margin-top: 2px;}
+#header nav .left > ul{height: 72px;}
+/*  */ #header nav .left > ul {position: relative;}
+#header nav .left > ul > li{float: left; display: table; height: 72px; padding: 0 14.5px;}
+#header nav .left > ul > li:first-child {padding: 0 14.5px 0 0;}
+#header nav .left > ul > li > a{position: relative; display: table-cell; height: 100%; vertical-align: middle; z-index: 1;  font-weight: bold; color: #fff;}
+#header nav .left > ul > li > a.active{color: #51ccff;}
+#header nav .left > ul > li > a.active::before{ content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; margin-top: 9px; background: #40a2cb;}
+/* #header nav .submenu_wrap{display: none; opacity: 1; height: 0px; overflow: hidden; position: absolute; top: 100%; left: 0; width: 100%;  padding: 82px 0px 0 0px; margin-top: -82px; transition: none;} */
+#header nav .sub_inner{display: table; width: 100%; max-width: 1440px; height: 0; margin: 0 auto; padding: 38px 0; line-height: 40px; direction: rtl; letter-spacing: 0.03em;}
+/*  */#header nav .sub_inner{position: absolute; width: 1440px; top:80px; left: 0;}
+#header nav .sub_inner > div {display: table-cell; width: 50%; direction: ltr; color: #fff;}
+#header nav .sub_inner a[target="_blank"]{position: relative; padding-right: 32px;}
+#header nav .sub_inner a[target="_blank"]::after{content:''; display: block; position: absolute; top: 0; right: 0; width: 19px; height: 19px; margin-top: 2px; background: url(http://www.hyundai-mnsoft.com/images/ico-blank.png) no-repeat center; background-size: 100% auto;}
+#header nav .menu_info dt {display: inline-block; position: relative; margin-left: -1px;}
+#header nav .menu_info dt::before{content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 2px; margin-top: 10px; background: #40a2cb;}
+#header nav .menu_info dd {margin-top: 8px; margin-left: -2px; font-size: 15px; line-height: 29px; }
+#header nav .submenu ul li a{color: #fff; font-size: 16px; font-weight: bold;}
+#header nav .submenu ul li a.active{color: #51ccff;}
+/* #header nav .left > ul > li:hover .submenu_wrap{display: block;} */
+/* nav .right */
+#header nav .right{float: right; display: table; margin-top: 2px; height: 100%; font-size: 15px; letter-spacing: 0.03em;}
+#header .clearfix::after{content:''; display: block; clear: both;}
+#header nav .right .navi_update{ position: relative; display: table-cell; height: 100%; padding-left: 49px; vertical-align: middle; color: #9ee3ff;}
+#header nav .right .navi_update::before{ content: ''; display: block; position: absolute; top: 36px; left: 0; width: 35px; height: 35px; margin-top: -18px; background: url(http://www.hyundai-mnsoft.com/images/ico-navi_wrap.png) no-repeat center; background-size: 100% auto;}
+#header nav .right .navi_update::after{ content: ''; display: block; position: absolute; top: 36px; left: 0; width: 35px; height: 35px; margin-top: -18px; background: url(http://www.hyundai-mnsoft.com/images/ico-navi_inner.png) no-repeat center; background-size: 100% auto;}
+#header nav .right .navi_update:hover::before{animation-name: rotateNavi; animation-duration: 2s; animation-iteration-count: infinite; animation-direction: reverse; animation-timing-function: linear;}
+  @keyframes rotateNavi {
+    from{ transform: rotate(0deg);}
+    to{ transform:rotate(360deg);}
+  }
+#header nav .right ul{height: 65px;}
+#header nav .right .lang{height: 100%; margin-left: 52px; }
+#header nav .right .lang li.active{color: #51ccff;}
+#header nav .right .lang li.active::before{ content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px; margin-top: 10px; background: #40a2cb;}
+#header nav .right .lang li.active::after{ content: ''; display: block; position: absolute; top: 50%; left: 100%; width: 2px; height: 11px; margin-top: -7px; margin-left: 11px; background: #ccc;}
+#header nav .right .lang li{float: left;position: relative; display: table; height: 100%; margin-right: 28px; }
+#header nav .right .lang li::after{content: ''; display: block;position: absolute; top: 50%; left: 100%; width: 2px; height: 11px; margin-top: -7px; margin-left: 11px; background: #ccc;}
+#header nav .right .lang li a{display: table-cell; width: 100%; height: 100%; vertical-align: middle; font-size: 16px; font-weight: bold; color: #fff;}
+#header nav .right .lang li.active a{color: #51ccff;}
+#header nav .right .lang li:last-child{ margin-right: 0; }
+#header nav .right .lang li:last-child::after{ content:''; display: block; clear: both; width: 0; height: 0; background: none;}
+/* </header> */
+
+/* main */
+/* section1 */
+section{position:relative;}
+.main-kv{background-color: #000;}
+.fitted{display: block; height: 969.9px;}
+.main-kv .gnb_gradient{position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: url(http://www.hyundai-mnsoft.com/images/main/HM_00main_upper_grad.png) no-repeat center/cover;}
+.main-kv .video_wrap{position: relative; top: 0; left: 0; width: 100%;background-color: #000;overflow:hidden;}
+.main-kv .main-video{position: absolute; top: 0; left: 0; width: 100%; min-width: 1720.67px; height: auto; min-height: 100%;} /* height 969px로 동영상 풀 사이즈 화면 맞추기*/
+.main-kv .content{position: absolute; bottom: 108px; left: 0; width: 100%; color: #fff; text-align: center;}
+.main-kv .content h2{width: 100%; margin: 0 auto; font-weight: bold; font-size: 42px; line-height: 60px; letter-spacing: .10em; text-shadow: 0 0 15px rgba(0, 0, 0, 0.7); text-transform: uppercase;}
+.main-kv .content .content-desc{width: 100%; margin: 26px auto 0;font-size: 18px; text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.6); line-height: 33px;}
+/* section2-1 */
+.main-tech{padding-bottom: 100px; overflow: hidden; background: #000;}
+.main-tech .motion-bg-obj {position: absolute;left: 0; right: 0;}
+.main-tech .motion-bg-obj img{position: absolute; left: 0; right: 0;}
+.main-tech .motion-bg-top{top: 0; }
+.main-tech .motion-bg-top img{height: 1446px;}
+.main-tech .motion-bg-bottom{bottom:0;}
+.main-tech .motion-bg-bottom img{bottom: 0; top: auto;  height: 1295px;}
+.main-tech .content-inner{position: relative; width: 100%; max-width: 1500px; margin: 0 auto; padding: 0 30px;}
+.main-tech .content-inner h3{padding: 154px 0 149px; color: #fff; text-shadow: 0 0 10px rgba(0, 0 , 0, 0.6);}
+.main-tech li{position: relative; margin-bottom: 50px;}
+.main-tech .content-inner > ul > li .motion-obj .motion_cover{position: absolute; top: 0; right: 300px; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8)}
+.main-tech .content-inner > ul > li:nth-child(3) .motion-obj .motion_cover{right: 0}
+.main-tech .content-inner > ul > li:nth-child(1) .motion-obj .motion_cover{right: -300px}
+.main-tech .content-obj{position: relative; margin: 0 auto; height: 100%; overflow: hidden;}
+.main-tech .content-obj img{display: block;width: 100%; height: auto;}
+.main-tech .motion-obj{width: 100%; height: 100%; position: absolute; top: 0; overflow: hidden;}
+.main-tech .motion-obj img{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.main-tech .contents{position: absolute; top: 65px; left: 72px; width: 390px; min-width: 254px;}
+.main-tech h4{font-size: 32px; font-family: ""; letter-spacing: 0.1em;}
+.main-tech .contents .short-line.blue{color: #51ccff;}
+.main-tech .contents .short-line.blue::after{content:''; display: block; position: absolute; top: 100%; left: 2px; width: 55px; height: 4px; margin-top: 11px; background: #51ccff;}
+.main-tech .contents .short-line{position: relative;}
+.main-tech .contents .content-desc{margin-top: 48px; color: rgba(255, 255, 255, 0.8); text-shadow: 0 0 4px rgba(0, 0, 0, 0.6); font-size: 18px; line-height: 33px;}
+.main-tech .wsnr{white-space: nowrap;}
+/* section2-2 */
+.main-tech li:nth-child(even) .contents{left: auto; right: 11px;}
+/* section2-3 */
+.main-tech .content-inner li:nth-child(3) .content-obj {margin-left: 300px;}
+/* section3 */
+.main-article{padding-bottom: 171px;}
+.main-article .content-inner{position: relative; width: 100%; max-width: 1500px; margin: 0 auto; padding: 0 30px;}
+.main-article h3{padding: 158px 0 95px; letter-spacing: 0.1em;}
+.main-article h3 span{display: block; margin-top: 16px; font-family: ""; font-size: 16px; letter-spacing: 0;}
+.main-article ul {overflow: hidden; width: 100%;}
+.main-article .article_list > ul > li{float: left; position: relative; width: 30.56%; margin-right: 4.16%; background: #2a3339; color: #fff;}
+.main-article li a{display: block; width: 100%; height: 100%; }
+.main-article li .content-obj{position: relative; margin: 0 auto; height: 100%; overflow: hidden;}
+.main-article li .content-obj img{display:block; opacity: 0.2; transition: opacity 3s linear, transform 3s linear; height: 550px; width: 100%;}
+.main-article li a:hover img{transform: scale(1.2); opacity: .5;}
+.main-article li .contents{position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 39px 30px;}
+.main-article li .contents .contents-sort{font-size: 22px;}
+.main-article li .contents .bottom{position: absolute;bottom: 108px; height: 85px; padding-right: 30px;}
+.main-article li .contents-date{opacity: 0.6; font-size: 14px; letter-spacing: -0.05em; text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);}
+.main-article li .contents-title{margin-top: 20px; font-size: 18px; line-height: 33px; letter-spacing: -0.025em; text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);}
+.main-article .article_list > ul > li:last-child{margin-right: 0;}
+.main-article .more{position: absolute; top: 218px; right: 28px; padding-left: 30px; font-family: ""; font-weight: bold; font-size: 18px; letter-spacing: 0.1em; color: #03407a; text-transform: uppercase;}
+.main-article .more::before{content:'';display:block; position: absolute; top: 56%; left: 6px; width: 2px; height: 14px; margin-top: -8px; background: #03407a; transition: transform 0.3s ease-out;}
+.main-article .more::after{content:'';display:block; position: absolute; top: 56%; left: 0px; width: 14px; height: 2px; margin-top: -2px; background: #03407a; transition: transform 0.3s ease-out;}
+/* section4 */
+.main-banner ul{width: 100%;}
+.main-banner .valign{display: table; height: 100%;}
+.main-banner .valign > *{display: table-cell; height: 100%; vertical-align: middle;}
+.main-banner li{width: 50%; background: #f4f4f4;}
+.main-banner li a{overflow: hidden; display: block; width: 100%; height: 100%;}
+.main-banner li .content-inner{max-width: 720px; height: 440px; margin: 0; padding: 0;}
+.main-banner li:nth-child(odd) .content-inner{float: right;}
+.main-banner li .contents{padding: 150px 196px 128px 73px;}
+.main-banner li h4{font-family: ""; font-size: 35px; line-height: 43px; letter-spacing: 0.10em;}
+.main-banner li h4::after{content:''; display: block; position: absolute; top: 100%; left: 2px; width: 55px; height: 4px; margin-top: 11px; background: #000;}
+.main-banner li .content-desc{margin-top: 49px; font-size: 20px; line-height: 35px; letter-spacing: -0.02em;}
+.main-banner li:nth-child(even){background: #eaebeb;}
+
+/* FOOTER */
+footer{position: relative; background: #1d1d1d; font-family: ""; font-size: 12px; line-height: 20px; color: #989898;}
+footer .valign > * {width: auto;}
+footer .top{padding: 0 30px; background: #282828; color: rgba(255, 255, 255, 0.4);}
+footer .top .footer_inner{width: 100%; max-width: 1440px; margin: 0 auto;}
+footer .footer_inner{width: 100%; max-width: 1440px; margin: 0 auto;}
+footer .top .info{width: 50%;}
+footer .top .logo{padding-right: 48px; padding-top: 54px; padding-bottom: 54px;}
+footer .top .logo img{width: 167px; height: auto;}
+footer .top address{padding: 16px 0px 14px;}
+footer .top span{padding:16px 0 14px;}
+footer .top .links_inner{float: right;}
+footer .top .links_inner > .valign{float: left;}
+footer .top .sns li{float: left; margin-right: 9px;}
+footer .top .sns li a{opacity: .3; display: block; width: 42px; height: 42px; border-radius: 50vh; background-color: rgba(0, 0, 0, 1); background-repeat: no-repeat;background-position: center; background-size: 100% auto;}
+footer .top .sns li a.facebook{background-image: url('http://www.hyundai-mnsoft.com/images/ico-facebook.png');}
+footer .top .sns li a.facebook:hover{background-color: #fff;}
+footer .top .sns li:last-child{margin-right: 55px;}
+footer .top .sns li a.youtube{background-image: url('http://www.hyundai-mnsoft.com/images/ico-blog.png');}
+footer .top .sns li a.youtube:hover{background-color: #fff;}
+.clearfix::after{content:''; display: block; clear: both;}
+footer .top .dropbox-inner .family{position: relative;}
+footer .top .dropbox-inner .family:hover{background: #fff; color: #000;}
+footer .top .dropbox-inner .group:hover{background: #fff; color: #000;}
+footer .top .dropbox button{ width: 201px; min-width: 170px; margin-left: -1px; padding: 12px 0 10px; border:1px solid #535353; background: url('http://www.hyundai-mnsoft.com/images/footer-openbox.png') no-repeat right center; background-size: auto 100%; font-size: 14px;}
+button, input[type="submit"], input[type="button"] {cursor: pointer; display: block; border: none; margin: 0; padding: 0; width: auto; overflow: visible; background: transparent; box-shadow: none; color: inherit; line-height: normal; letter-spacing: inherit;}
+footer .top .dropbox-inner .small_dropbox{ width: calc(100% - 1px); bottom: calc(100% - 1px); text-align: left; padding: 25px 23px 22px;}
+footer .top .dropbox-inner .footer_dropbox{ z-index: 1; display: none; position: absolute; left: 0; right: 0; border: 1px solid #c7c7c7; background: #fff;}
+footer .top .dropbox-inner .footer_dropbox li + li{margin-top: 13px;}
+footer .top .dropbox-inner .whole_dropbox{height: 435px; bottom: 134px; width: 1440px; margin: 0 auto; padding: 28px 0;}
+footer .top .dropbox-inner .whole_dropbox ul.dropbox-depth1{margin-left: 30px; float: left; width: calc(1227px / 7);}
+footer .top .dropbox-inner .whole_dropbox ul.dropbox-depth2{margin-top: 10px;}
+footer .top .dropbox-inner .whole_dropbox ul.dropbox-depth1 > li:nth-child(1){position: relative; display: inline-block; font-size: 18px; color: #000; font-weight: bold; margin-bottom: 26px;}
+footer .top .dropbox-inner .whole_dropbox ul.dropbox-depth1:hover > li:nth-child(1):after{content: ''; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1px; background: #51ccff;}
+footer .top .dropbox-inner .whole_dropbox::after{content:''; display: block; clear: both;}
+footer .top .dropbox-inner .footer_dropbox a{font-size: 14px; line-height: 16px; color: #616161;}
+footer .bottom{padding: 0 30px; overflow: hidden; position: relative;}
+footer .bottom .right{font-size: 11px; color: rgba(255, 255, 255, 0.3); letter-spacing: 0.06em; text-align: right; padding: 16px 0 14px; }
+footer .bottom::after{content: ''; display: block; position: absolute; bottom: 100%; left: 0; width: 100%; height: 5px; margin-top: 3px; background: #1d1d1d;}
+footer .top .dropbox-inner .family.active .small_dropbox{display: block;}
+footer .top .dropbox-inner .group.active .whole_dropbox{display: block;}
+
+/* transition */
+.main-tech li .contents{opacity: 0; transition: all 2s ease 0s;}
+.main-tech li.active .motion_cover{transition: all 1s ease 1s;}
+.main-tech li.active .motion-obj img{transition: all 1s ease 0s;}
